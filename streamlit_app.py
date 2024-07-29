@@ -10,14 +10,11 @@ model = load_model(model_path)
 st.title("Fruit Ripeness Classifier")
 
 def predict(image):
-    image = image.resize((224, 224))  # Adjust this size based on your model's expected input
+    image = image.resize((64, 64))  # Resize to 64x64
     image = np.array(image) / 255.0
     image = np.expand_dims(image, axis=0)
-    st.write(f"Preprocessed image shape: {image.shape}")  # Debugging statement
     prediction = model.predict(image)
     return prediction
-
-st.write(f"Model input shape: {model.input_shape}")  # Debugging statement
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
@@ -26,5 +23,6 @@ if uploaded_file is not None:
     st.image(image, caption='Uploaded Image.', use_column_width=True)
     st.write("")
     st.write("Classifying...")
+    st.write(f"Preprocessed image shape: {np.array(image).shape}")
     label = predict(image)
     st.write(f"Prediction: {label}")
