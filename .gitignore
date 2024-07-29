@@ -1,17 +1,3 @@
-.vercel
-myenv/
-myenv/
-*.pyc
-__pycache__/
-.DS_Store
-myenv/
-*.pyc
-__pycache__/
-.DS_Store
-myenv/
-*.pyc
-__pycache__/
-.DS_Store
 myenv/
 *.pyc
 __pycache__/
