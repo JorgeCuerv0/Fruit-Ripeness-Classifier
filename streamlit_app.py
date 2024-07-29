@@ -18,10 +18,11 @@ else:
 st.title("Fruit Ripeness Classifier")
 
 def predict(image):
-    image = image.resize((64, 64))  # Adjust the resize dimensions according to your model input
+    # Resize the image to the expected input shape of the model
+    image = image.resize((64, 64))  # Resize to the model's expected input shape
     image = np.array(image) / 255.0
     image = np.expand_dims(image, axis=0)
-    st.write(f"Preprocessed image shape: {image.shape}")
+    st.write(f"Preprocessed image shape: {image.shape}")  # Debugging statement
     try:
         prediction = model.predict(image)
         return prediction
