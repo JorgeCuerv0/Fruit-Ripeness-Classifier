@@ -1,0 +1,14 @@
+.container {
+    margin-top: 50px;
+}
+.center {
+    text-align: center;
+}
+.image-preview {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+.hidden {
+    display: none;
+}
